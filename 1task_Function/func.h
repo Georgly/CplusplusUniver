@@ -2,11 +2,12 @@
 #define FUNC_H
 
 
-class func
+class Func
 {
 public:
-    func();
+    Func();
     void *memccpy (void *destination, const void *source, int c, int n);
+    void *memccpy2 (void *destination, const void *source, int c, int n);
 
 };
 
