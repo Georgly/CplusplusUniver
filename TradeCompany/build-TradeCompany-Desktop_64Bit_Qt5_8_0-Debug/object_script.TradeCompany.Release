@@ -1,0 +1,12 @@
+INPUT(
+./release\main.o
+./release\company.o
+./release\customer.o
+./release\storagecustomer.o
+./release\storecustomer.o
+./release\store.o
+./release\storage.o
+./release\truck.o
+./release\storetruck.o
+./release\storagetruck.o
+);

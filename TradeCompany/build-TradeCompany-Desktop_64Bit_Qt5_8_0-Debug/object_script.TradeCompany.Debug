@@ -1,0 +1,12 @@
+INPUT(
+./debug\main.o
+./debug\company.o
+./debug\customer.o
+./debug\storagecustomer.o
+./debug\storecustomer.o
+./debug\store.o
+./debug\storage.o
+./debug\truck.o
+./debug\storetruck.o
+./debug\storagetruck.o
+);
