@@ -6,6 +6,7 @@ class Truck
 {
 public:
     Truck();
+    ~Truck();
     virtual void Fill() = 0;
 };
 

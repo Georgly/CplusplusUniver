@@ -1,8 +1,8 @@
 #include "company.h"
+#include "iostream"
 
 Company::Company()
 {
-    goods[0] = "greens"; goods[1] = "bread"; goods[2] = "cereals";goods[3] = "appliances";
     for(int i = 0; i < Company::COUNT; i++)
     {
         storages[i] = new Storage(i);
@@ -19,7 +19,6 @@ Company::~Company()
     }
     delete storages;
     delete stores;
-    //delete GOODS;
 }
 
 Storage* Company::GetStorage(int id)
@@ -34,12 +33,24 @@ Store* Company::GetStore(int id)
 
 void Company::CheckStores()
 {
+
     for(int i = 0; i < COUNT; i++)
     {
-        stores[i]->CheckCount();
+        if(stores[i]->CheckCount())
+        {
+            std::cout<<"Send truck from Stores\n";
+            stores[i]->SendTruck(storages);
+        }
+
     }
 }
 
 void Company::RefillStores()
 {
+    std::cout<<"Send truck from Storage\n";
+    for(int i = 0; i < Company::COUNT; i++)
+    {
+        storages[i]->SendTruck(stores);
+    }
 }
+

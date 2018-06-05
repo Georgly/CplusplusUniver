@@ -1,6 +1,9 @@
 #ifndef STORAGE_H
 #define STORAGE_H
 #include "storagetruck.h"
+#include "store.h"
+class StorageTruck;
+class Store;
 
 class Storage
 {
@@ -8,14 +11,14 @@ public:
 private:
     short _type;
     int _count;
-    StorageTruck _truck;
+    StorageTruck* _truck;
 
 public:
     Storage(int type);
     ~Storage();
 
     void Sell(int type, int count);
-    void SendTruck();
+    void SendTruck(Store* stores[]);
 
     int GetType();
     int GetCount();

@@ -8,7 +8,8 @@ class Company
 {
 public:
     static const int COUNT = 4;
-    static QString goods[4];
+    static const int FILLCOUNT = 50;
+    static QString goods[COUNT];
 protected:
 private:
     Storage* storages[COUNT];

@@ -4,9 +4,9 @@
 
 void Storage::SellMessage(int type, int count)
 {
-    QString res = "Storage-" + static_cast<QString>(GetType())
-            + " sell " + static_cast<QString>(count)
-            + " of " + Company::goods->at(type);
+    QString res = "Storage-" + QString::number(GetType())
+            + " sell " + QString::number(count)
+            + " of " + Company::goods[type] + "\n";
     std::cout << res.toStdString().data();
 }
 
@@ -14,10 +14,12 @@ Storage::Storage(int type)
 {
     SetType(type);
     SetCount(10000);
+    _truck = new StorageTruck(type);
 }
 
 Storage::~Storage()
 {
+    delete _truck;
 }
 
 void Storage::SetType(int type)
@@ -45,7 +47,8 @@ void Storage::Sell(int type, int count)
     SellMessage(type, count);
 }
 
-void Storage::SendTruck()
+void Storage::SendTruck(Store* stores[])
 {
-//TODO
+    _truck->GetStores(stores);
+    _truck->Fill();
 }
